@@ -1,0 +1,116 @@
+
+* strings in java is immutable
+* re intialization is not allow
+*wraper class
+
+
+
+
+
+
+java - platform independent 
+jvm - .class file to machine code it it platform dependent 
+jre - only can run program cannt create
+jdk - jre+development tools+complier
+class loader->byte code verifier->interpreter->Runtime->hardware
+
+while and for loop: when number of times it runs is known run for loop
+-----------------------------------------------------------------------
+3) methods/function:
+pass by refernce (c++ code):
+#include <iostream>
+using namespace std;
+void swap(int* x,int* y);
+int main() {
+    // Write C++ code here
+   int a=10,b=20;
+   cout<<"The value of a"<<a<<"value of b"<<b;
+
+    return 0;
+}
+void swap(int* a,int* b){
+    int temp = *a;
+    *a=*b;
+    *b=temp;
+}
+--------------------------java code--------------------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   int[] arr = {2,3,4,5,6};
+	   change(arr);
+	   System.out.println(Arrays.toString(arr));
+	   
+}
+
+
+   static void change(int[] arrayList){
+      arrayList[0]=34;
+  }
+}
+---------------------------------------------------------------------------------------------
+and pass by value(new instant of variable is created):primitive data types are pass by values
+nomaral swaping like (swap(a,b))
+
+------------------------------scoping------------------------------
+
+1) import java.util.*;
+2) To create the variable we need to define it (int ,char,etc)
+public class Main
+{
+	public static void main(String[] args) {
+	   int a =10,b=90;
+	   {
+	       a =78;// here a is reference to original int a =10;
+	   }
+	   System.out.println(a);
+	   
+}
+
+}
+
+3) shadowing: 
+4) variable argument: when we donnt know how many number of argument to be passed
+   void num(int...v)
+5)
+------------------------------Arrays---------------------------------------
+1) why arrays - like store the roll number
+2)int[] array =new int[5]; or int[] array ={item1,item2}
+3)memory managment of array:
+   referance variable -  stack(array)
+   data               - heap(int[5])
+   intial allocation is 0.
+ array object may not be continous(jvm heap memory is not contineous)
+4)null: special value of refernce value;
+5)when array is intialize not assign values 0,null is stored
+6)Array.toString()
+
+7)passing in function
+8)Multidimentional arrays: int[][] arrays= new int[3][3] (arrays[{},{},{}])
+
+
+-----------------------------------ArrayList---------------------------------
+ArrayList<Wraper class> name = new ArrayList<>(Intial size);
+properties:
+1)dynamic memory 
+2)wrapper class
+3)
+list.add(),list.get(index),list.set(index,value),list.remove(index),list.
+4)2D arrays 
+code(not full):
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        for(int i=0;i<3;i++){
+            list.add(new ArrayList<Integer>());
+        }
+        for(int i=0;i<3;i++){
+            for (int j=0;j<3;j++){
+                list.get(j).add(sc.nextInt());
+            } 
+        }
+    }
+}                                              
