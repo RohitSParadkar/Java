@@ -1,3 +1,4 @@
+// Linear search problems
 class RichestCustomer{
     public static void main(String[] args){
     int accounts[][] = {{2,3,4},{3,6,7},{3,7,3}};
